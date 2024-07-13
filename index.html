@@ -145,22 +145,24 @@
         </section>
 
         <!-- File Upload Section -->
-        <section id="upload" class="upload-section">
-            <div class="upload-container">
-                <div class="upload-form">
-                    <h2><i class="fas fa-upload"></i> Upload Job Vacancy</h2>
-                    <form id="job-ad-form">
-                        <label for="job-ad">Upload Job Description:</label>
-                        <input type="file" id="job-ad" name="job-ad">
-                    </form>
-                </div>
-                <div class="upload-form">
-                    <h2><i class="fas fa-file-upload"></i> Upload Candidate CVs</h2>
-                    <form id="cv-form">
-                        <label for="cv">Upload CVs (multiple allowed):</label>
-                        <input type="file" id="cv" name="cv" multiple>
-                    </form>
-                </div>
-            </div>
-            <div class="run-analysis">
-                <button
+<section id="upload" class="upload-section">
+    <div class="upload-container">
+        <div class="upload-form">
+            <h2><i class="fas fa-upload"></i> Upload Job Vacancy</h2>
+            <form id="job-ad-form">
+                <label for="job-ad">Upload Job Description:</label>
+                <input type="file" id="job-ad" name="job-ad">
+            </form>
+        </div>
+        <div class="upload-form">
+            <h2><i class="fas fa-file-upload"></i> Upload Candidate CVs</h2>
+            <form id="cv-form">
+                <label for="cv">Upload CVs (multiple allowed):</label>
+                <input type="file" id="cv" name="cv" multiple>
+            </form>
+        </div>
+    </div>
+    <div class="run-analysis">
+        <button class="btn" onclick="runAnalysis()"><i class="fas fa-play-circle"></i> Run Analysis</button>
+    </div>
+</section>
