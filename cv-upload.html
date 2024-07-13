@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload CVs - Job Match Pro</title>
+    <style>
+        /* Include the same styles as in index.html and job-upload.html */
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Same header as index.html -->
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Upload Candidate CVs</h1>
+            <p>Select multiple CV files to find the best matches for your job opening.</p>
+        </section>
+
+        <section class="upload-form">
+            <form action="/submit-cvs" method="post" enctype="multipart/form-data">
+                <label for="cv-files">Select CV files (PDF, DOC, DOCX):</label>
+                <input type="file" id="cv-files" name="cv-files" accept=".pdf,.doc,.docx" multiple required>
+
+                <button type="submit" class="btn">Upload CVs</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Job Match Pro. All rights reserved.</p>
+    </footer>
+</body>
+</html>
