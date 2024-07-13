@@ -22,3 +22,7 @@ function runAnalysis() {
     alert('Analysis is running...');
     // Here you would typically make an API call to your backend to handle the file uploads and processing
 }
+document.getElementById('run-analysis-btn').addEventListener('click', function() {
+    // Add functionality to trigger the LLM analysis here
+    alert('Running Candidate Analysis...');
+});
