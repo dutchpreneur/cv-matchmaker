@@ -19,9 +19,19 @@ body {
 }
 
 header {
-    background: #fff;
+    background: #007bff;
     padding: 1rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+}
+
+header h1 i {
+    margin-right: 10px;
 }
 
 nav {
@@ -43,7 +53,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     display: flex;
     align-items: center;
 }
@@ -54,7 +64,7 @@ nav ul li a i {
 
 .btn {
     display: inline-block;
-    background: #007bff;
+    background: #28a745;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -69,12 +79,14 @@ nav ul li a i {
 }
 
 .btn:hover {
-    background: #0056b3;
+    background: #218838;
 }
 
 .hero {
     text-align: center;
     padding: 50px 0;
+    background: #007bff;
+    color: #fff;
 }
 
 .hero h1 {
@@ -104,7 +116,7 @@ nav ul li a i {
     margin: 30px 0;
 }
 
-.social-proof {
+.social-proof, .about-us, .faq {
     background: #fff;
     padding: 30px;
     border-radius: 10px;
@@ -124,56 +136,41 @@ nav ul li a i {
 
 .benefits, .process, .whats-included {
     margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.benefits .benefit, .process .step, .whats-included ul {
+.benefits .benefit, .process .step, .whats-included ul li {
     background: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin: 10px 0;
+    margin: 10px;
+    flex: 1 1 calc(33.333% - 20px);
+    text-align: center;
 }
 
-.benefits .benefit h3, .process .step h3 {
+.benefits .benefit h3, .process .step h3, .whats-included ul li {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.benefits .benefit h3 i, .process .step h3 i {
+.benefits .benefit h3 i, .process .step h3 i, .whats-included ul li i {
     margin-right: 10px;
 }
 
 .whats-included ul {
     list-style: none;
     padding-left: 0;
-}
-
-.whats-included ul li {
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.whats-included ul li i {
-    margin-right: 10px;
-    color: green;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .about-us {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin: 30px 0;
-}
-
-.faq {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin: 30px 0;
+    text-align: center;
 }
 
 .faq .faq-item {
@@ -281,5 +278,13 @@ nav ul li a i {
         width: 100%;
         padding: 20px;
         margin-top: 20px;
+    }
+
+    .benefits .benefit, .process .step, .whats-included ul li {
+        flex: 1 1 100%;
+    }
+
+    .whats-included ul {
+        flex-direction: column;
     }
 }
