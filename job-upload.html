@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Job - Job Match Pro</title>
     <style>
-        /* Include the same styles as in index.html */
-        /* Add this additional style for the form */
+        /* Include the same base styles as in index.html */
+        
         .upload-form {
             background: #fff;
             padding: 30px;
@@ -25,11 +25,17 @@
             border-radius: 5px;
             border: 1px solid #ddd;
         }
+        
+        @media (max-width: 768px) {
+            .upload-form {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <!-- Same header as index.html -->
+        <!-- Same responsive header as index.html -->
     </header>
 
     <main class="container">
@@ -57,7 +63,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="container">
         <p>&copy; 2024 Job Match Pro. All rights reserved.</p>
     </footer>
 </body>
