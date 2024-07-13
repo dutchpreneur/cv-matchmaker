@@ -82,16 +82,19 @@ nav ul li a {
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 30px;
-    align-items: center;
+    align-items: stretch;
 }
 
-.upload-form {
+.upload-form, .run-analysis {
     background: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     flex: 1;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .upload-form label {
@@ -106,14 +109,6 @@ nav ul li a {
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
-
-.run-analysis {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
 }
 
 .features, .workflow {
@@ -148,61 +143,4 @@ nav ul li a {
 
 .menu-icon {
     display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .menu-icon {
-        display: block;
-        align-self: flex-end;
-    }
-
-    .btn {
-        margin-top: 10px;
-        align-self: flex-start;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .upload-section {
-        flex-direction: column;
-    }
-
-    .upload-form {
-        padding: 20px;
-        width: 100%;
-    }
-
-    .run-analysis {
-        width: 100%;
-        padding: 20px;
-        margin-top: 20px;
-    }
-}
+    font-size: 24
