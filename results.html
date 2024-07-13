@@ -5,8 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results - Job Match Pro</title>
     <style>
-        /* Include the same styles as in index.html */
-        /* Add this additional style for the results */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            padding: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
         .candidate-result {
             background: #fff;
             padding: 20px;
@@ -14,11 +86,56 @@
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
+        .candidate-result h3 {
+            margin-bottom: 10px;
+        }
+
+        .candidate-result ul, .candidate-result ol {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                margin-top: 10px;
+            }
+
+            .btn {
+                margin-top: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .candidate-result {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <!-- Same header as index.html -->
+        <nav class="container">
+            <h1>Job Match Pro</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="job-upload.html">Upload Job</a></li>
+                <li><a href="cv-upload.html">Upload CVs</a></li>
+                <li><a href="results.html">View Results</a></li>
+            </ul>
+            <a href="#" class="btn">Get Started</a>
+        </nav>
     </header>
 
     <main class="container">
@@ -46,11 +163,11 @@
                     <li>How do you approach learning new technologies?</li>
                 </ol>
             </div>
-            <!-- More candidate results would be added here -->
+            <!-- More candidate results would be dynamically added here -->
         </section>
     </main>
 
-    <footer>
+    <footer class="container">
         <p>&copy; 2024 Job Match Pro. All rights reserved.</p>
     </footer>
 </body>
