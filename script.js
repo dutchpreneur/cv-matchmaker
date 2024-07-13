@@ -8,4 +8,11 @@ function runAnalysis() {
     const jobAdFile = document.getElementById('job-ad').files[0];
     const cvFiles = document.getElementById('cv').files;
 
-    if (!job
+    if (!jobAdFile) {
+        alert('Please upload a job description.');
+        return;
+    }
+
+    if (cvFiles.length === 0) {
+        alert('Please upload at least one CV.');
+        return
