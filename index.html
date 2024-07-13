@@ -4,191 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Match Pro - Landing Page</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f0f8ff;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        header {
-            background: #fff;
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        nav ul li {
-            padding: 0 10px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 50px 0;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .upload-form {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-
-        .upload-form label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .upload-form input[type="file"] {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .features, .workflow {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
-
-        .feature, .step {
-            flex: 1 1 300px;
-            background: #fff;
-            margin: 10px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .social-proof {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-top: 50px;
-        }
-
-        .testimonial {
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-
-        .menu-icon {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-wrap: wrap;
-            }
-
-            nav ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                margin-top: 20px;
-            }
-
-            nav ul.show {
-                display: flex;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            .menu-icon {
-                display: block;
-                order: 1;
-            }
-
-            nav h1 {
-                flex-grow: 1;
-                order: 2;
-            }
-
-            .btn {
-                order: 3;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .upload-form {
-                padding: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="menu-icon" onclick="toggleMenu()">☰</div>
             <h1>Job Match Pro</h1>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
@@ -201,80 +23,61 @@
 
     <main class="container">
         <section class="hero">
-            <h1>Make job matching fast and easy.</h1>
-            <p>Match the perfect candidate with your job opening in minutes—no coding required.</p>
+            <h1>Welcome to Job Match Pro</h1>
+            <p>Find your perfect job match today!</p>
+            <a href="#upload" class="btn">Upload Your Resume</a>
         </section>
 
         <section id="upload" class="upload-form">
-            <h2>Upload Job Ad and CV</h2>
-            <form action="/submit-match" method="post" enctype="multipart/form-data">
-                <label for="job-ad">Upload Job Advertisement (PDF, DOC, DOCX):</label>
-                <input type="file" id="job-ad" name="job-ad" accept=".pdf,.doc,.docx" required>
-
-                <label for="cv">Upload CV (PDF, DOC, DOCX):</label>
-                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
-
-                <button type="submit" class="btn">Find Match</button>
+            <h2>Upload Your Resume</h2>
+            <form>
+                <label for="resume">Choose a file:</label>
+                <input type="file" id="resume" name="resume">
+                <button type="submit" class="btn">Submit</button>
             </form>
         </section>
 
-        <section id="how-it-works" class="workflow">
-            <h2>How it works</h2>
-            <div class="step">
-                <h3>Step 1</h3>
-                <p>Upload job advertisement</p>
+        <section id="how-it-works" class="features">
+            <div class="feature">
+                <h3>Feature 1</h3>
+                <p>Description of feature 1.</p>
             </div>
-            <div class="step">
-                <h3>Step 2</h3>
-                <p>Upload candidate CV</p>
+            <div class="feature">
+                <h3>Feature 2</h3>
+                <p>Description of feature 2.</p>
             </div>
-            <div class="step">
-                <h3>Step 3</h3>
-                <p>Get detailed match results</p>
+            <div class="feature">
+                <h3>Feature 3</h3>
+                <p>Description of feature 3.</p>
             </div>
         </section>
 
-        <section id="benefits" class="features">
-            <div class="feature">
-                <h3>Easy to Use</h3>
-                <p>Uploading jobs and CVs is easy and fast.</p>
+        <section id="benefits" class="workflow">
+            <div class="step">
+                <h3>Step 1</h3>
+                <p>Description of step 1.</p>
             </div>
-            <div class="feature">
-                <h3>100% Accurate</h3>
-                <p>Our matching algorithm ensures precise results.</p>
+            <div class="step">
+                <h3>Step 2</h3>
+                <p>Description of step 2.</p>
             </div>
-            <div class="feature">
-                <h3>50+ Job Types</h3>
-                <p>Support for a wide range of industries and positions.</p>
+            <div class="step">
+                <h3>Step 3</h3>
+                <p>Description of step 3.</p>
             </div>
         </section>
 
         <section id="social-proof" class="social-proof">
-            <h2>What Recruiters Say About Us</h2>
+            <h2>What Our Users Say</h2>
             <div class="testimonial">
-                <p>"Job Match Pro has revolutionized our hiring process. We've cut our time-to-hire by 50%!"</p>
-                <p>- Sarah Johnson, HR Manager at Tech Innovators Inc.</p>
+                <p>"Job Match Pro helped me find my dream job!" - User A</p>
             </div>
             <div class="testimonial">
-                <p>"The accuracy of the matches is incredible. We've found some amazing candidates we might have otherwise overlooked."</p>
-                <p>- Michael Chen, Recruiting Specialist at Global Solutions Ltd.</p>
-            </div>
-            <div class="testimonial">
-                <p>"Easy to use and incredibly effective. Job Match Pro is now an essential part of our recruitment toolkit."</p>
-                <p>- Emma Rodriguez, Talent Acquisition Lead at StartUp Dynamo</p>
+                <p>"A fantastic tool for job seekers." - User B</p>
             </div>
         </section>
     </main>
 
-    <footer class="container">
-        <p>&copy; 2024 Job Match Pro. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.classList.toggle("show");
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
