@@ -107,6 +107,10 @@ nav ul li a {
     border-radius: 5px;
 }
 
+.upload-form button {
+    margin-top: 10px;
+}
+
 .features, .workflow {
     display: flex;
     justify-content: space-between;
@@ -114,80 +118,4 @@ nav ul li a {
     margin-top: 50px;
 }
 
-.feature, .step {
-    flex: 1 1 300px;
-    background: #fff;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.social-proof {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-top: 50px;
-}
-
-.testimonial {
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .menu-icon {
-        display: block;
-        align-self: flex-end;
-    }
-
-    .btn {
-        margin-top: 10px;
-        align-self: flex-start;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .upload-section {
-        flex-direction: column;
-    }
-
-    .upload-form {
-        padding: 20px;
-        width: 100%;
-    }
-}
+.f
