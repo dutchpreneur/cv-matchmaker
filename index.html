@@ -29,10 +29,14 @@
         </section>
 
         <section id="upload" class="upload-form">
-            <h2>Upload Your Resume</h2>
-            <form>
-                <label for="resume">Choose a file:</label>
-                <input type="file" id="resume" name="resume">
+            <h2>Upload Files</h2>
+            <form id="job-ad-form">
+                <label for="job-ad">Upload Job Ad:</label>
+                <input type="file" id="job-ad" name="job-ad">
+            </form>
+            <form id="cv-form">
+                <label for="cv">Upload CVs (multiple files allowed):</label>
+                <input type="file" id="cv" name="cv" multiple>
                 <button type="submit" class="btn">Submit</button>
             </form>
         </section>
