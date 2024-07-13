@@ -5,18 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Job - Job Match Pro</title>
     <style>
-        /* Include the same base styles as in index.html */
-        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            padding: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
         .upload-form {
             background: #fff;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
         .upload-form label {
             display: block;
             margin-bottom: 5px;
         }
+
         .upload-form input[type="text"],
         .upload-form textarea {
             width: 100%;
@@ -25,8 +99,29 @@
             border-radius: 5px;
             border: 1px solid #ddd;
         }
-        
+
         @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                margin-top: 10px;
+            }
+
+            .btn {
+                margin-top: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
             .upload-form {
                 padding: 20px;
             }
@@ -35,7 +130,16 @@
 </head>
 <body>
     <header>
-        <!-- Same responsive header as index.html -->
+        <nav class="container">
+            <h1>Job Match Pro</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="job-upload.html">Upload Job</a></li>
+                <li><a href="cv-upload.html">Upload CVs</a></li>
+                <li><a href="results.html">View Results</a></li>
+            </ul>
+            <a href="#" class="btn">Get Started</a>
+        </nav>
     </header>
 
     <main class="container">
