@@ -15,4 +15,10 @@ function runAnalysis() {
 
     if (cvFiles.length === 0) {
         alert('Please upload at least one CV.');
-        return
+        return;
+    }
+
+    // Placeholder for API call to the LLM for analysis
+    alert('Analysis is running...');
+    // Here you would typically make an API call to your backend to handle the file uploads and processing
+}
