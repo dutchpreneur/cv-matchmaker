@@ -3,33 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Match Pro</title>
+    <title>Job Match Pro - Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            padding: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .feature {
+            flex: 1;
+            background: #fff;
+            margin: 0 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .workflow {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .step {
+            flex: 1;
+            background: #fff;
+            margin: 0 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Job Match Pro</h1>
-        <nav>
+        <nav class="container">
+            <h1>Job Match Pro</h1>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="job-upload.html">Upload Job</a></li>
                 <li><a href="cv-upload.html">Upload CVs</a></li>
                 <li><a href="results.html">View Results</a></li>
             </ul>
+            <a href="#" class="btn">Get Started</a>
         </nav>
     </header>
-    <main>
-        <h2>Welcome to Job Match Pro</h2>
-        <p>Find the perfect candidate for your job openings!</p>
-        <section>
-            <h3>How it works:</h3>
-            <ol>
-                <li>Upload a job advertisement</li>
-                <li>Upload candidate CVs</li>
-                <li>Get detailed match results and interview questions</li>
-            </ol>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Make job matching fast and easily.</h1>
+            <p>Create custom job matches with Job Match Pro that convert more applicants than any website—no coding required.</p>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+            <p>Trusted by over 50,000+ customers</p>
         </section>
-        <a href="job-upload.html">Get Started</a>
+
+        <section class="features">
+            <div class="feature">
+                <h3>Easy to Use</h3>
+                <p>Uploading jobs and CVs is easy and fast.</p>
+            </div>
+            <div class="feature">
+                <h3>100% Accurate</h3>
+                <p>Our matching algorithm ensures precise results.</p>
+            </div>
+            <div class="feature">
+                <h3>50+ Job Types</h3>
+                <p>Support for a wide range of industries and positions.</p>
+            </div>
+        </section>
+
+        <section class="workflow">
+            <h2>How it works</h2>
+            <div class="step">
+                <h3>Step 1</h3>
+                <p>Upload job advertisement</p>
+            </div>
+            <div class="step">
+                <h3>Step 2</h3>
+                <p>Upload candidate CVs</p>
+            </div>
+            <div class="step">
+                <h3>Step 3</h3>
+                <p>Get detailed match results</p>
+            </div>
+        </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Job Match Pro. All rights reserved.</p>
     </footer>
