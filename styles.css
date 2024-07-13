@@ -44,6 +44,12 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #333;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 5px;
 }
 
 .btn {
@@ -56,6 +62,10 @@ nav ul li a {
     cursor: pointer;
     text-decoration: none;
     transition: background 0.3s ease;
+}
+
+.btn i {
+    margin-right: 5px;
 }
 
 .btn:hover {
@@ -128,19 +138,19 @@ nav ul li a {
     text-align: center;
 }
 
+.feature h3, .step h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature h3 i, .step h3 i {
+    margin-right: 10px;
+}
+
 .social-proof {
     background: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin-top: 50px;
-}
-
-.testimonial {
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.menu-icon {
-    display: none;
-    font-size: 24
