@@ -5,41 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Match Pro - Landing Page</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            margin: 0;
-            padding: 0;
             background-color: #f0f8ff;
         }
+
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
-            overflow: hidden;
             padding: 20px;
         }
+
         header {
             background: #fff;
             padding: 1rem;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
+
         nav ul {
             display: flex;
             list-style: none;
+            flex-wrap: wrap;
         }
+
         nav ul li {
             padding: 0 10px;
         }
+
         nav ul li a {
             text-decoration: none;
             color: #333;
         }
+
         .btn {
             display: inline-block;
             background: #007bff;
@@ -50,45 +63,79 @@
             cursor: pointer;
             text-decoration: none;
         }
+
         .hero {
             text-align: center;
             padding: 50px 0;
         }
+
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
+
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
-        .features {
+
+        .features, .workflow {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             margin-top: 50px;
         }
-        .feature {
-            flex: 1;
+
+        .feature, .step {
+            flex: 1 1 300px;
             background: #fff;
-            margin: 0 10px;
+            margin: 10px;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             text-align: center;
         }
-        .workflow {
+
+        form {
             display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
         }
-        .step {
-            flex: 1;
-            background: #fff;
-            margin: 0 10px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
+
+        input[type="email"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex: 1 1 200px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                margin-top: 10px;
+            }
+
+            .btn {
+                margin-top: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .feature, .step {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
@@ -149,7 +196,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="container">
         <p>&copy; 2024 Job Match Pro. All rights reserved.</p>
     </footer>
 </body>
