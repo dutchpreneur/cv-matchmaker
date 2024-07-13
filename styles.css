@@ -318,4 +318,18 @@ nav ul li a i {
     .whats-included ul {
         flex-direction: column;
     }
+    /* Existing CSS ... */
+
+.benefit h3, .step h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.benefit h3 i, .step h3 i {
+    font-size: 1.5em; /* Adjust the size as needed */
+    color: #4A90E2; /* Adjust the color as needed */
+}
+
 }
