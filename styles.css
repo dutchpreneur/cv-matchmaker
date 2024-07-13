@@ -82,6 +82,7 @@ nav ul li a {
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 30px;
+    align-items: center;
 }
 
 .upload-form {
@@ -107,8 +108,12 @@ nav ul li a {
     border-radius: 5px;
 }
 
-.upload-form button {
-    margin-top: 10px;
+.run-analysis {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 .features, .workflow {
@@ -195,7 +200,9 @@ nav ul li a {
         width: 100%;
     }
 
-    .upload-form button {
+    .run-analysis {
         width: 100%;
+        padding: 20px;
+        margin-top: 20px;
     }
 }
