@@ -35,7 +35,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         nav ul {
@@ -139,8 +138,7 @@
 
         @media (max-width: 768px) {
             nav {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-wrap: wrap;
             }
 
             nav ul {
@@ -160,12 +158,16 @@
 
             .menu-icon {
                 display: block;
-                align-self: flex-end;
+                order: 1;
+            }
+
+            nav h1 {
+                flex-grow: 1;
+                order: 2;
             }
 
             .btn {
-                margin-top: 10px;
-                align-self: flex-start;
+                order: 3;
             }
 
             .hero h1 {
@@ -185,8 +187,8 @@
 <body>
     <header>
         <nav class="container">
-            <h1>Job Match Pro</h1>
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <h1>Job Match Pro</h1>
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
@@ -197,7 +199,76 @@
         </nav>
     </header>
 
-    <!-- Rest of the HTML remains the same -->
+    <main class="container">
+        <section class="hero">
+            <h1>Make job matching fast and easy.</h1>
+            <p>Match the perfect candidate with your job opening in minutes—no coding required.</p>
+        </section>
+
+        <section id="upload" class="upload-form">
+            <h2>Upload Job Ad and CV</h2>
+            <form action="/submit-match" method="post" enctype="multipart/form-data">
+                <label for="job-ad">Upload Job Advertisement (PDF, DOC, DOCX):</label>
+                <input type="file" id="job-ad" name="job-ad" accept=".pdf,.doc,.docx" required>
+
+                <label for="cv">Upload CV (PDF, DOC, DOCX):</label>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+
+                <button type="submit" class="btn">Find Match</button>
+            </form>
+        </section>
+
+        <section id="how-it-works" class="workflow">
+            <h2>How it works</h2>
+            <div class="step">
+                <h3>Step 1</h3>
+                <p>Upload job advertisement</p>
+            </div>
+            <div class="step">
+                <h3>Step 2</h3>
+                <p>Upload candidate CV</p>
+            </div>
+            <div class="step">
+                <h3>Step 3</h3>
+                <p>Get detailed match results</p>
+            </div>
+        </section>
+
+        <section id="benefits" class="features">
+            <div class="feature">
+                <h3>Easy to Use</h3>
+                <p>Uploading jobs and CVs is easy and fast.</p>
+            </div>
+            <div class="feature">
+                <h3>100% Accurate</h3>
+                <p>Our matching algorithm ensures precise results.</p>
+            </div>
+            <div class="feature">
+                <h3>50+ Job Types</h3>
+                <p>Support for a wide range of industries and positions.</p>
+            </div>
+        </section>
+
+        <section id="social-proof" class="social-proof">
+            <h2>What Recruiters Say About Us</h2>
+            <div class="testimonial">
+                <p>"Job Match Pro has revolutionized our hiring process. We've cut our time-to-hire by 50%!"</p>
+                <p>- Sarah Johnson, HR Manager at Tech Innovators Inc.</p>
+            </div>
+            <div class="testimonial">
+                <p>"The accuracy of the matches is incredible. We've found some amazing candidates we might have otherwise overlooked."</p>
+                <p>- Michael Chen, Recruiting Specialist at Global Solutions Ltd.</p>
+            </div>
+            <div class="testimonial">
+                <p>"Easy to use and incredibly effective. Job Match Pro is now an essential part of our recruitment toolkit."</p>
+                <p>- Emma Rodriguez, Talent Acquisition Lead at StartUp Dynamo</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2024 Job Match Pro. All rights reserved.</p>
+    </footer>
 
     <script>
         function toggleMenu() {
