@@ -5,10 +5,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f0f8ff;
+    background-color: #f7f9fc;
 }
 
 .container {
@@ -19,7 +19,7 @@ body {
 }
 
 header {
-    background: #007bff;
+    background: #4A90E2;
     padding: 1rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     color: #fff;
@@ -64,7 +64,7 @@ nav ul li a i {
 
 .btn {
     display: inline-block;
-    background: #28a745;
+    background: #50C878;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -79,19 +79,20 @@ nav ul li a i {
 }
 
 .btn:hover {
-    background: #218838;
+    background: #45B06B;
 }
 
 .hero {
     text-align: center;
     padding: 50px 0;
-    background: #007bff;
+    background: #4A90E2;
     color: #fff;
 }
 
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .hero p {
@@ -116,7 +117,15 @@ nav ul li a i {
     margin: 30px 0;
 }
 
-.social-proof, .about-us, .faq {
+.cta .btn {
+    background: #FF6347;
+}
+
+.cta .btn:hover {
+    background: #FF4500;
+}
+
+.social-proof, .about-us, .faq, .upload-section {
     background: #fff;
     padding: 30px;
     border-radius: 10px;
@@ -127,6 +136,7 @@ nav ul li a i {
 .social-proof h2, .benefits h2, .process h2, .whats-included h2, .about-us h2, .faq h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .testimonial {
@@ -134,14 +144,13 @@ nav ul li a i {
     font-style: italic;
 }
 
-.benefits, .process, .whats-included {
-    margin: 30px 0;
-}
-
 .benefits-container, .process-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    background: #f0f8ff;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .benefit, .step {
@@ -170,6 +179,9 @@ nav ul li a i {
     flex-wrap: wrap;
     list-style: none;
     padding-left: 0;
+    background: #e6f7ff;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .whats-included ul li {
@@ -186,11 +198,12 @@ nav ul li a i {
 
 .whats-included ul li i {
     margin-right: 10px;
-    color: green;
+    color: #50C878;
 }
 
 .about-us {
     text-align: center;
+    background: #f0f8ff;
 }
 
 .faq .faq-item {
@@ -206,15 +219,7 @@ nav ul li a i {
     margin-right: 10px;
 }
 
-.upload-section {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 30px;
-    align-items: stretch;
-}
-
-.upload-container {
+.upload-section .upload-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
