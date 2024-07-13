@@ -148,7 +148,7 @@ nav ul li a i {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background: #f0f8ff;
+    background: #f7f9fc;  /* Use the same background color as the body */
     padding: 20px;
     border-radius: 10px;
 }
@@ -179,7 +179,7 @@ nav ul li a i {
     flex-wrap: wrap;
     list-style: none;
     padding-left: 0;
-    background: #e6f7ff;
+    background: #fff;  /* Use white background for a cleaner look */
     padding: 20px;
     border-radius: 10px;
 }
@@ -187,7 +187,7 @@ nav ul li a i {
 .whats-included ul li {
     display: flex;
     align-items: center;
-    background: #fff;
+    background: #f7f9fc;  /* Slightly different background to differentiate */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -203,7 +203,6 @@ nav ul li a i {
 
 .about-us {
     text-align: center;
-    background: #f0f8ff;
 }
 
 .faq .faq-item {
