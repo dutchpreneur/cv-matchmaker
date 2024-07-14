@@ -1,40 +1,364 @@
-/* Footer Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f7f9fc;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    background: #4A90E2;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+}
+
+header h1 i {
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    padding: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 5px;
+}
+
+.btn {
+    display: inline-block;
+    background: #50C878;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+.btn:hover {
+    background: #45B06B;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 0;
+    background: #4A90E2;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.vsl {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.vsl video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cta {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.cta .btn {
+    background: #FF6347;
+}
+
+.cta .btn:hover {
+    background: #FF4500;
+}
+
+.social-proof, .about-us, .faq, .upload-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 30px 0;
+}
+
+.social-proof h2, .benefits h2, .process h2, .whats-included h2, .about-us h2, .faq h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.testimonial {
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.benefits-container, .process-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #f7f9fc;  /* Use the same background color as the body */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.benefit, .step {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 10px;
+    flex: 1 1 calc(33% - 20px); /* Ensures three boxes per row */
+    text-align: center;
+}
+
+.benefit h3, .step h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit h3 i, .step h3 i {
+    margin-right: 10px;
+}
+
+.whats-included ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+    background: #fff;  /* Use white background for a cleaner look */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.whats-included ul li {
+    display: flex;
+    align-items: center;
+    background: #f7f9fc;  /* Slightly different background to differentiate */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 10px;
+    flex: 1 1 calc(25% - 20px); /* Ensures four boxes per row */
+    text-align: center;
+}
+
+.whats-included ul li i {
+    margin-right: 10px;
+    color: #50C878;
+}
+
+.about-us {
+    text-align: center;
+}
+
+.faq .faq-item {
+    margin-bottom: 20px;
+}
+
+.faq .faq-item h3 {
+    display: flex;
+    align-items: center;
+}
+
+.faq .faq-item h3 i {
+    margin-right: 10px;
+}
+
+.upload-section .upload-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.upload-form, .run-analysis {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.upload-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.upload-form input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+        align-self: flex-end;
+    }
+
+    .btn {
+        margin-top: 10px;
+        align-self: flex-start;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .upload-section {
+        flex-direction: column;
+    }
+
+    .upload-form {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .run-analysis {
+        width: 100%;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .benefit, .step, .whats-included ul li {
+        flex: 1 1 100%;
+    }
+
+    .whats-included ul {
+        flex-direction: column;
+    }
+    /* Existing CSS ... */
+
+.benefit h3, .step h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.benefit h3 i, .step h3 i {
+    font-size: 1.5em; /* Adjust the size as needed */
+    color: #4A90E2; /* Adjust the color as needed */
+}
+
+}
+<!-- Include FontAwesome if not already included -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Add this CSS to your styles.css or within a <style> tag in your HTML -->
+<style>
 .footer {
     background-color: #333;
     color: #fff;
     padding: 40px 0;
-    margin-top: 40px;
 }
 
 .footer .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-row {
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
 }
 
 .footer-col {
     flex: 1;
-    min-width: 220px;
+    min-width: 250px;
     margin: 20px;
-    text-align: center;
 }
 
 .footer-col h3 {
     font-size: 18px;
     margin-bottom: 20px;
-}
-
-.footer-col p, .footer-col ul {
-    font-size: 14px;
-    line-height: 1.6;
 }
 
 .footer-col ul {
@@ -44,13 +368,6 @@
 
 .footer-col ul li {
     margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-col ul li i {
-    margin-right: 10px;
 }
 
 .footer-col ul li a {
@@ -64,7 +381,6 @@
 
 .footer-col .social-links {
     display: flex;
-    justify-content: center;
 }
 
 .footer-col .social-links a {
@@ -74,19 +390,14 @@
     font-size: 20px;
 }
 
-.footer-col .social-links a:hover {
-    color: #ddd;
-}
-
 .footer-bottom {
     text-align: center;
     padding: 20px 0;
     border-top: 1px solid #444;
-    width: 100%;
     margin-top: 20px;
 }
 
 .footer-bottom p {
     margin: 0;
-    font-size: 14px;
 }
+</style>
