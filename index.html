@@ -1,170 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Match Pro - Optimize Your Hiring Process</title>
-    <!-- Correct Font Awesome CDN link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnH1zl7/q0H3Akqg3UzRzV1rXtTA1fpRjZPZpD0LbQsLyoq9Y9T1+FzkKJZW3s1ELTwnxLk7g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav class="container">
-            <h1><i class="fas fa-briefcase"></i> Job Match Pro</h1>
-            <div class="menu-icon" onclick="toggleMenu()">☰</div>
-            <ul id="menu">
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#how-it-works"><i class="fas fa-info-circle"></i> How It Works</a></li>
-                <li><a href="#benefits"><i class="fas fa-star"></i> Benefits</a></li>
-                <li><a href="#social-proof"><i class="fas fa-comments"></i> Testimonials</a></li>
-                <li><a href="#about-us"><i class="fas fa-users"></i> About Us</a></li>
-                <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
-            </ul>
-            <a href="#upload" class="btn"><i class="fas fa-arrow-circle-right"></i> Get Started</a>
-        </nav>
-    </header>
+<!-- File Upload Section -->
+<section id="upload" class="upload-section">
+    <div class="upload-container">
+        <div class="upload-form">
+            <h2><i class="fas fa-upload"></i> Upload Job Vacancy</h2>
+            <form id="job-ad-form">
+                <label for="job-ad">Upload Job Description:</label>
+                <input type="file" id="job-ad" name="job-ad" required>
+            </form>
+        </div>
+        <div class="upload-form">
+            <h2><i class="fas fa-file-upload"></i> Upload Candidate CVs</h2>
+            <form id="cv-form">
+                <label for="cv">Upload CVs (multiple allowed):</label>
+                <input type="file" id="cv" name="cv" multiple required>
+            </form>
+        </div>
+        <div class="upload-form">
+            <h2><i class="fas fa-envelope"></i> Your Email Address</h2>
+            <form id="email-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </form>
+        </div>
+        <div class="run-analysis">
+            <h2><i class="fas fa-play-circle"></i> Run Candidate Analysis</h2>
+            <button id="run-analysis-btn" class="btn"><i class="fas fa-play"></i> Run Analysis</button>
+        </div>
+    </div>
+</section>
 
-    <main class="container">
-        <!-- Headline -->
-        <section class="hero">
-            <h1>Optimize Your Hiring Process</h1>
-            <p>Effortlessly match job vacancies with the best-fit candidates using AI-driven analysis.</p>
-        </section>
+<script>
+document.getElementById('run-analysis-btn').addEventListener('click', async () => {
+    const jobAd = document.getElementById('job-ad').files[0];
+    const cvs = document.getElementById('cv').files;
+    const email = document.getElementById('email').value;
 
-        <!-- VSL -->
-        <section class="vsl">
-            <video controls>
-                <source src="video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </section>
+    if (!jobAd || cvs.length === 0 || !email) {
+        alert('Please upload job description, candidate CVs, and enter your email address.');
+        return;
+    }
 
-        <!-- CTA -->
-        <section class="cta">
-            <a href="#upload" class="btn"><i class="fas fa-upload"></i> Upload Job Vacancy & CVs</a>
-        </section>
+    const formData = new FormData();
+    formData.append('job-ad', jobAd);
+    for (let i = 0; i < cvs.length; i++) {
+        formData.append('cv', cvs[i]);
+    }
+    formData.append('email', email);
 
-        <!-- Social Proof -->
-        <section id="social-proof" class="social-proof">
-            <h2><i class="fas fa-users"></i> What Our Users Say</h2>
-            <div class="testimonial">
-                <p><i class="fas fa-quote-left"></i> "Job Match Pro significantly reduced our time-to-hire and helped us find the perfect candidates!" - Recruiter A <i class="fas fa-quote-right"></i></p>
-            </div>
-            <div class="testimonial">
-                <p><i class="fas fa-quote-left"></i> "The detailed CV analysis and ranking is a game-changer for our hiring process." - Recruiter B <i class="fas fa-quote-right"></i></p>
-            </div>
-        </section>
+    try {
+        const response = await fetch('/api/run-analysis', {
+            method: 'POST',
+            body: formData
+        });
 
-        <!-- Benefits Section -->
-        <section id="benefits" class="benefits">
-            <h2>Benefits</h2>
-            <div class="benefits-container">
-                <div class="benefit">
-                    <h3><i class="fas fa-cogs"></i> AI-Powered Matching</h3>
-                    <p>Leverage advanced AI to match job descriptions with the most suitable candidates efficiently.</p>
-                </div>
-                <div class="benefit">
-                    <h3><i class="fas fa-chart-line"></i> Detailed Insights</h3>
-                    <p>Receive a detailed ranking and analysis of each CV's strengths and weaknesses.</p>
-                </div>
-                <div class="benefit">
-                    <h3><i class="fas fa-clock"></i> Save Time</h3>
-                    <p>Streamline your hiring process by automating the initial CV screening and matching.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process Section -->
-        <section id="process" class="process">
-            <h2>The Process</h2>
-            <div class="process-container">
-                <div class="step">
-                    <h3><i class="fas fa-file-alt"></i> Step 1: Upload Job Vacancy</h3>
-                    <p>Upload the job description to extract key requirements and qualifications.</p>
-                </div>
-                <div class="step">
-                    <h3><i class="fas fa-upload"></i> Step 2: Upload CVs</h3>
-                    <p>Upload one or multiple candidate CVs for analysis.</p>
-                </div>
-                <div class="step">
-                    <h3><i class="fas fa-list-alt"></i> Step 3: Get Results</h3>
-                    <p>Receive a ranked list of candidates along with detailed analysis and insights.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- What's Included -->
-        <section id="whats-included" class="whats-included">
-            <h2>What's Included</h2>
-            <ul>
-                <li><i class="fas fa-check"></i> AI-Powered Matching</li>
-                <li><i class="fas fa-check"></i> Detailed CV Analysis</li>
-                <li><i class="fas fa-check"></i> Candidate Ranking</li>
-                <li><i class="fas fa-check"></i> Time-Saving Automation</li>
-            </ul>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta">
-            <a href="#upload" class="btn"><i class="fas fa-upload"></i> Get Started Now</a>
-        </section>
-
-        <!-- About Us -->
-        <section id="about-us" class="about-us">
-            <h2>About Us</h2>
-            <p>Job Match Pro is dedicated to revolutionizing the hiring process by leveraging cutting-edge AI technology to match job vacancies with the best-fit candidates.</p>
-        </section>
-
-        <!-- Social Proof -->
-        <section id="more-social-proof" class="social-proof">
-            <h2><i class="fas fa-users"></i> More Testimonials</h2>
-            <div class="testimonial">
-                <p><i class="fas fa-quote-left"></i> "This tool has transformed our recruitment strategy, making it more efficient and effective." - Recruiter C <i class="fas fa-quote-right"></i></p>
-            </div>
-            <div class="testimonial">
-                <p><i class="fas fa-quote-left"></i> "A must-have for any recruitment team looking to streamline their hiring process." - Recruiter D <i class="fas fa-quote-right"></i></p>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section id="faq" class="faq">
-            <h2>FAQ</h2>
-            <div class="faq-item">
-                <h3><i class="fas fa-question-circle"></i> How does Job Match Pro work?</h3>
-                <p>Job Match Pro uses advanced AI to analyze job descriptions and CVs, providing a ranked list of candidates based on their fit for the role.</p>
-            </div>
-            <div class="faq-item">
-                <h3><i class="fas fa-question-circle"></i> What file formats are supported?</h3>
-                <p>We support a wide range of file formats including PDF, DOCX, and TXT for both job descriptions and CVs.</p>
-            </div>
-            <div class="faq-item">
-                <h3><i class="fas fa-question-circle"></i> Is my data secure?</h3>
-                <p>Yes, we prioritize your data security and ensure all uploads are encrypted and processed securely.</p>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta">
-            <a href="#upload" class="btn"><i class="fas fa-upload"></i> Start Matching Now</a>
-        </section>
-
-        <!-- File Upload Section -->
-        <section id="upload" class="upload-section">
-            <div class="upload-container">
-                <div class="upload-form">
-                    <h2><i class="fas fa-upload"></i> Upload Job Vacancy</h2>
-                    <form id="job-ad-form">
-                        <label for="job-ad">Upload Job Description:</label>
-                        <input type="file" id="job-ad" name="job-ad">
-                    </form>
-                </div>
-                <div class="upload-form">
-                    <h2><i class="fas fa-file-upload"></i> Upload Candidate CVs</h2>
-                    <form id="cv-form">
-                        <label for="cv">Upload CVs (multiple allowed):</label>
-                        <input type="file" id="cv" name="cv" multiple>
-                    </form>
-                </div>
-                <div class="run-analysis">
-                    <
+        if (response.ok) {
+            alert('Analysis is being processed. Results will be sent to your email.');
+        } else {
+            alert('There was an error processing your request. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('There was an error processing your request. Please try again.');
+    }
+});
+</script>
