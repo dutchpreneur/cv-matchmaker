@@ -9,6 +9,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f7f9fc;
+    margin: 0; /* Ensure there is no margin around the body */
 }
 
 .container {
@@ -276,7 +277,10 @@ nav ul li a i {
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    width: 100%; /* Ensure full width */
     margin-top: 40px; /* Added margin to separate the footer from the form */
+    position: relative; /* To ensure it covers the full width */
+    left: 0;
 }
 
 .footer-container {
@@ -383,23 +387,4 @@ nav ul li a i {
     .run-analysis {
         width: 100%;
         padding: 20px;
-        margin-top: 20px;
-    }
-
-    .benefit, .step, .whats-included ul li {
-        flex: 1 1 100%;
-    }
-
-    .whats-included ul {
-        flex-direction: column;
-    }
-}
-
-.benefit h3, .step h3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.benefit h3
+        margin-top: 20
