@@ -24,14 +24,12 @@
             <a href="#upload" class="btn"><i class="fas fa-arrow-circle-right"></i> Get Started</a>
         </nav>
     </header>
-
     <main class="container">
         <!-- Headline -->
         <section class="hero">
             <h1>Optimize Your Hiring Process</h1>
             <p>Effortlessly match job vacancies with the best-fit candidates using AI-driven analysis.</p>
         </section>
-
         <!-- VSL -->
         <section class="vsl">
             <video controls>
@@ -39,12 +37,10 @@
                 Your browser does not support the video tag.
             </video>
         </section>
-
         <!-- CTA -->
         <section class="cta">
             <a href="#upload" class="btn"><i class="fas fa-upload"></i> Upload Job Vacancy & CVs</a>
         </section>
-
         <!-- Social Proof -->
         <section id="social-proof" class="social-proof">
             <h2><i class="fas fa-users"></i> What Our Users Say</h2>
@@ -55,7 +51,6 @@
                 <p><i class="fas fa-quote-left"></i> "The detailed CV analysis and ranking is a game-changer for our hiring process." - Recruiter B <i class="fas fa-quote-right"></i></p>
             </div>
         </section>
-
  <!-- Benefits Section -->
     <section id="benefits" class="benefits">
         <h2>Benefits</h2>
@@ -74,7 +69,6 @@
             </div>
         </div>
     </section>
-
     <!-- Process Section -->
     <section id="process" class="process">
         <h2>The Process</h2>
@@ -93,8 +87,6 @@
             </div>
         </div>
     </section>
-
-
         <!-- What's Included -->
         <section id="whats-included" class="whats-included">
             <h2>What's Included</h2>
@@ -105,18 +97,15 @@
                 <li><i class="fas fa-check"></i> Time-Saving Automation</li>
             </ul>
         </section>
-
         <!-- CTA -->
         <section class="cta">
             <a href="#upload" class="btn"><i class="fas fa-upload"></i> Get Started Now</a>
         </section>
-
         <!-- About Us -->
         <section id="about-us" class="about-us">
             <h2>About Us</h2>
             <p>Job Match Pro is dedicated to revolutionizing the hiring process by leveraging cutting-edge AI technology to match job vacancies with the best-fit candidates.</p>
         </section>
-
         <!-- Social Proof -->
         <section id="more-social-proof" class="social-proof">
             <h2><i class="fas fa-users"></i> More Testimonials</h2>
@@ -127,7 +116,6 @@
                 <p><i class="fas fa-quote-left"></i> "A must-have for any recruitment team looking to streamline their hiring process." - Recruiter D <i class="fas fa-quote-right"></i></p>
             </div>
         </section>
-
         <!-- FAQ -->
         <section id="faq" class="faq">
             <h2>FAQ</h2>
@@ -144,12 +132,10 @@
                 <p>Yes, we prioritize your data security and ensure all uploads are encrypted and processed securely.</p>
             </div>
         </section>
-
         <!-- CTA -->
         <section class="cta">
             <a href="#upload" class="btn"><i class="fas fa-upload"></i> Start Matching Now</a>
         </section>
-
 <!-- File Upload Section -->
 <section id="upload" class="upload-section">
     <div class="upload-container">
@@ -177,33 +163,27 @@
         </div>
     </div>
 </section>
-
 <script>
 document.getElementById('run-analysis-btn').addEventListener('click', async (event) => {
     event.preventDefault(); // Prevent the form from submitting the default way
-
     const jobAd = document.getElementById('job-ad').files[0];
     const cvs = document.getElementById('cv').files;
     const email = document.getElementById('email').value;
-
     if (!jobAd || cvs.length === 0 || !email) {
         alert('Please upload job description, candidate CVs, and enter your email address.');
         return;
     }
-
     const formData = new FormData();
     formData.append('job-ad', jobAd);
     for (let i = 0; i < cvs.length; i++) {
         formData.append('cv', cvs[i]);
     }
     formData.append('email', email);
-
     try {
         const response = await fetch('/api/run-analysis', {
             method: 'POST',
             body: formData
         });
-
         if (response.ok) {
             alert('Analysis is being processed. Results will be sent to your email.');
         } else {
@@ -216,7 +196,6 @@ document.getElementById('run-analysis-btn').addEventListener('click', async (eve
 });
 </script>
 
-<<<<<<< HEAD
 <!-- Footer Section -->
 <footer class="footer">
     <div class="container">
@@ -258,6 +237,3 @@ document.getElementById('run-analysis-btn').addEventListener('click', async (eve
         </div>
     </div>
 </footer>
-=======
->>>>>>> parent of b46a661 (incl. footer)
-
