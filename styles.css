@@ -218,6 +218,7 @@ nav ul li a i {
     margin-right: 10px;
 }
 
+/* Existing CSS for upload section */
 .upload-section .upload-container {
     display: flex;
     justify-content: space-between;
@@ -249,6 +250,80 @@ nav ul li a i {
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+.email-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.email-section form {
+    width: 100%;
+}
+
+.wide-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.run-analysis {
+    margin-top: 10px;
+}
+
+.footer-section {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px; /* Added margin to separate the footer from the form */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-link {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    color: #ddd;
 }
 
 .menu-icon {
@@ -318,7 +393,7 @@ nav ul li a i {
     .whats-included ul {
         flex-direction: column;
     }
-    /* Existing CSS ... */
+}
 
 .benefit h3, .step h3 {
     display: flex;
@@ -327,9 +402,4 @@ nav ul li a i {
     gap: 10px;
 }
 
-.benefit h3 i, .step h3 i {
-    font-size: 1.5em; /* Adjust the size as needed */
-    color: #4A90E2; /* Adjust the color as needed */
-}
-
-}
+.benefit h3
