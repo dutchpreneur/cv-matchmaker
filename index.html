@@ -24,12 +24,14 @@
             <a href="#upload" class="btn"><i class="fas fa-arrow-circle-right"></i> Get Started</a>
         </nav>
     </header>
+
     <main class="container">
         <!-- Headline -->
         <section class="hero">
             <h1>Optimize Your Hiring Process</h1>
             <p>Effortlessly match job vacancies with the best-fit candidates using AI-driven analysis.</p>
         </section>
+
         <!-- VSL -->
         <section class="vsl">
             <video controls>
@@ -37,10 +39,12 @@
                 Your browser does not support the video tag.
             </video>
         </section>
+
         <!-- CTA -->
         <section class="cta">
             <a href="#upload" class="btn"><i class="fas fa-upload"></i> Upload Job Vacancy & CVs</a>
         </section>
+
         <!-- Social Proof -->
         <section id="social-proof" class="social-proof">
             <h2><i class="fas fa-users"></i> What Our Users Say</h2>
@@ -51,6 +55,7 @@
                 <p><i class="fas fa-quote-left"></i> "The detailed CV analysis and ranking is a game-changer for our hiring process." - Recruiter B <i class="fas fa-quote-right"></i></p>
             </div>
         </section>
+
  <!-- Benefits Section -->
     <section id="benefits" class="benefits">
         <h2>Benefits</h2>
@@ -69,6 +74,7 @@
             </div>
         </div>
     </section>
+
     <!-- Process Section -->
     <section id="process" class="process">
         <h2>The Process</h2>
@@ -87,6 +93,8 @@
             </div>
         </div>
     </section>
+
+
         <!-- What's Included -->
         <section id="whats-included" class="whats-included">
             <h2>What's Included</h2>
@@ -97,15 +105,18 @@
                 <li><i class="fas fa-check"></i> Time-Saving Automation</li>
             </ul>
         </section>
+
         <!-- CTA -->
         <section class="cta">
             <a href="#upload" class="btn"><i class="fas fa-upload"></i> Get Started Now</a>
         </section>
+
         <!-- About Us -->
         <section id="about-us" class="about-us">
             <h2>About Us</h2>
             <p>Job Match Pro is dedicated to revolutionizing the hiring process by leveraging cutting-edge AI technology to match job vacancies with the best-fit candidates.</p>
         </section>
+
         <!-- Social Proof -->
         <section id="more-social-proof" class="social-proof">
             <h2><i class="fas fa-users"></i> More Testimonials</h2>
@@ -116,6 +127,7 @@
                 <p><i class="fas fa-quote-left"></i> "A must-have for any recruitment team looking to streamline their hiring process." - Recruiter D <i class="fas fa-quote-right"></i></p>
             </div>
         </section>
+
         <!-- FAQ -->
         <section id="faq" class="faq">
             <h2>FAQ</h2>
@@ -132,11 +144,13 @@
                 <p>Yes, we prioritize your data security and ensure all uploads are encrypted and processed securely.</p>
             </div>
         </section>
+
         <!-- CTA -->
         <section class="cta">
             <a href="#upload" class="btn"><i class="fas fa-upload"></i> Start Matching Now</a>
         </section>
-<!-- File Upload Section -->
+
+   <!-- File Upload Section -->
 <section id="upload" class="upload-section">
     <div class="upload-container">
         <div class="upload-form">
@@ -158,32 +172,39 @@
             <form id="email-form">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-                <button id="run-analysis-btn" class="btn"><i class="fas fa-play"></i> Run Analysis and Receive Results via Email</button>
             </form>
+        </div>
+        <div class="run-analysis">
+            <h2><i class="fas fa-play-circle"></i> Run Candidate Analysis</h2>
+            <button id="run-analysis-btn" class="btn"><i class="fas fa-play"></i> Run Analysis</button>
         </div>
     </div>
 </section>
+
 <script>
-document.getElementById('run-analysis-btn').addEventListener('click', async (event) => {
-    event.preventDefault(); // Prevent the form from submitting the default way
+document.getElementById('run-analysis-btn').addEventListener('click', async () => {
     const jobAd = document.getElementById('job-ad').files[0];
     const cvs = document.getElementById('cv').files;
     const email = document.getElementById('email').value;
+
     if (!jobAd || cvs.length === 0 || !email) {
         alert('Please upload job description, candidate CVs, and enter your email address.');
         return;
     }
+
     const formData = new FormData();
     formData.append('job-ad', jobAd);
     for (let i = 0; i < cvs.length; i++) {
         formData.append('cv', cvs[i]);
     }
     formData.append('email', email);
+
     try {
         const response = await fetch('/api/run-analysis', {
             method: 'POST',
             body: formData
         });
+
         if (response.ok) {
             alert('Analysis is being processed. Results will be sent to your email.');
         } else {
@@ -195,45 +216,3 @@ document.getElementById('run-analysis-btn').addEventListener('click', async (eve
     }
 });
 </script>
-
-<!-- Footer Section -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-row">
-            <div class="footer-col">
-                <h3>Job Match Pro</h3>
-                <p>Revolutionizing the hiring process by leveraging cutting-edge AI technology to match job vacancies with the best-fit candidates.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#how-it-works"><i class="fas fa-info-circle"></i> How It Works</a></li>
-                    <li><a href="#benefits"><i class="fas fa-star"></i> Benefits</a></li>
-                    <li><a href="#about-us"><i class="fas fa-users"></i> About Us</a></li>
-                    <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> 123 Job St, Hiring City, HC 12345</li>
-                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
-                    <li><i class="fas fa-envelope"></i> support@jobmatchpro.com</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Job Match Pro. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
