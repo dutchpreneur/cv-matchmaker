@@ -150,143 +150,54 @@
             <a href="#upload" class="btn"><i class="fas fa-upload"></i> Start Matching Now</a>
         </section>
 
-<!-- File Upload Section -->
-<section id="upload" class="upload-section">
-    <div class="upload-container">
-        <div class="upload-form">
-            <h2><i class="fas fa-upload"></i> Upload Job Vacancy</h2>
-            <form id="job-ad-form">
-                <label for="job-ad">Upload Job Description:</label>
-                <input type="file" id="job-ad" name="job-ad" required>
-            </form>
-        </div>
-        <div class="upload-form">
-            <h2><i class="fas fa-file-upload"></i> Upload Candidate CVs</h2>
-            <form id="cv-form">
-                <label for="cv">Upload CVs (multiple allowed):</label>
-                <input type="file" id="cv" name="cv" multiple required>
-            </form>
-        </div>
-        <div class="upload-form">
-            <h2><i class="fas fa-envelope"></i> Your Email Address</h2>
-            <form id="email-form">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </form>
-            <div class="run-analysis">
-                <button id="run-analysis-btn" class="btn"><i class="fas fa-play"></i> Run Analysis and Receive Results via Email</button>
+ <!-- File Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="upload-container">
+            <div class="upload-form">
+                <h2><i class="fas fa-upload"></i> Upload Job Vacancy</h2>
+                <form id="job-ad-form">
+                    <label for="job-ad">Upload Job Description:</label>
+                    <input type="file" id="job-ad" name="job-ad" required>
+                </form>
+            </div>
+            <div class="upload-form">
+                <h2><i class="fas fa-file-upload"></i> Upload Candidate CVs</h2>
+                <form id="cv-form">
+                    <label for="cv">Upload CVs (multiple allowed):</label>
+                    <input type="file" id="cv" name="cv" multiple required>
+                </form>
+            </div>
+            <div class="upload-form email-section">
+                <h2><i class="fas fa-envelope"></i> Your Email Address</h2>
+                <form id="email-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="wide-input" required>
+                </form>
+                <div class="run-analysis">
+                    <button id="run-analysis-btn" class="btn"><i class="fas fa-play"></i> Run Analysis and Receive Results via Email</button>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<script>
-document.getElementById('run-analysis-btn').addEventListener('click', async () => {
-    const jobAd = document.getElementById('job-ad').files[0];
-    const cvs = document.getElementById('cv').files;
-    const email = document.getElementById('email').value;
-
-    if (!jobAd || cvs.length === 0 || !email) {
-        alert('Please upload job description, candidate CVs, and enter your email address.');
-        return;
-    }
-
-    const formData = new FormData();
-    formData.append('job-ad', jobAd);
-    for (let i = 0; i < cvs.length; i++) {
-        formData.append('cv', cvs[i]);
-    }
-    formData.append('email', email);
-
-    try {
-        const response = await fetch('/api/run-analysis', {
-            method: 'POST',
-            body: formData
-        });
-
-        if (response.ok) {
-            alert('Analysis is being processed. Results will be sent to your email.');
-        } else {
-            alert('There was an error processing your request. Please try again.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('There was an error processing your request. Please try again.');
-    }
-});
-</script>
-<!-- Footer Section -->
-<footer class="footer-section">
-    <div class="footer-container">
-        <div class="footer-content">
-            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
-            <ul class="footer-links">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-            <div class="social-media">
-                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <div class="social-media">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-
-<style>
-.footer-section {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-.footer-links li {
-    display: inline;
-    margin: 0 10px;
-}
-
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-.social-media {
-    margin-top: 10px;
-}
-
-.social-link {
-    color: #fff;
-    margin: 0 10px;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.social-link:hover {
-    color: #ddd;
-}
-</style>
+    </footer>
+</body>
+</html>
