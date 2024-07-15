@@ -227,7 +227,7 @@ nav ul li a i {
     width: 100%;
 }
 
-.upload-form, .run-analysis {
+.upload-form {
     background: #fff;
     padding: 30px;
     border-radius: 10px;
@@ -257,6 +257,7 @@ nav ul li a i {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: 1; /* Ensure email section takes up equal space */
 }
 
 .email-section form {
@@ -269,7 +270,21 @@ nav ul li a i {
 }
 
 .run-analysis {
-    margin-top: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#run-analysis-btn {
+    background-color: #4CAF50; /* Customize button color as needed */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#run-analysis-btn:hover {
+    background-color: #45a049; /* Button hover color */
 }
 
 .footer-section {
@@ -372,21 +387,4 @@ nav ul li a i {
     }
 
     .hero p {
-        font-size: 1rem;
-    }
-
-    .upload-section {
-        flex-direction: column;
-    }
-
-    .upload-form {
-        padding: 20px;
-        width: 100%;
-    }
-
-    .run-analysis {
-        width: 100%;
-        padding: 20px;
-        margin-top: 20
-    }
-}
+        font-size: 
